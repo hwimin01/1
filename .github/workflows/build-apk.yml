@@ -20,8 +20,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: gradlew 실행 권한 부여
-        run: chmod +x gradlew
+      - name: gradlew 줄바꿈 및 권한 수정
+        run: sed -i 's/\r//' gradlew && chmod +x gradlew
 
       - name: Debug APK 빌드
         run: ./gradlew assembleDebug --no-daemon
