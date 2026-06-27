@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="AI 설정">
+
+        <EditTextPreference
+            android:key="claude_api_key"
+            android:title="Claude API 키"
+            android:summary="Anthropic Console에서 발급받은 API 키"
+            android:inputType="textPassword"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="TTS (음성 출력) 설정">
+
+        <SeekBarPreference
+            android:key="tts_speech_rate"
+            android:title="읽기 속도"
+            android:summary="빠를수록 높은 값 (기본: 50)"
+            android:defaultValue="50"
+            android:min="20"
+            android:max="200" />
+
+        <SeekBarPreference
+            android:key="tts_pitch"
+            android:title="음성 높낮이"
+            android:summary="높을수록 높은 목소리 (기본: 50)"
+            android:defaultValue="50"
+            android:min="20"
+            android:max="150" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="동작 설정">
+
+        <SwitchPreferenceCompat
+            android:key="auto_read_on_page_change"
+            android:title="페이지 변경 시 자동 읽기"
+            android:summary="전자책 앱에서 페이지가 바뀌면 자동으로 읽기 시작"
+            android:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            android:key="auto_start_on_boot"
+            android:title="부팅 시 자동 시작"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="ocr_language"
+            android:title="OCR 언어"
+            android:entries="@array/ocr_languages"
+            android:entryValues="@array/ocr_language_values"
+            android:defaultValue="ko"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
