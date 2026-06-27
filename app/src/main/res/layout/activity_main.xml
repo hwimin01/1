@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- 앱 제목 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="전자책 보조 리더"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OCR + AI 기반 시각장애인용 독서 보조앱"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginBottom="32dp" />
+
+        <!-- 권한 상태 카드 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="권한 상태"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:id="@+id/statusOverlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="확인 중..."
+                    android:textSize="14sp"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/statusMic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="확인 중..."
+                    android:textSize="14sp"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/statusAccessibility"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="확인 중..."
+                    android:textSize="14sp"
+                    android:padding="4dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 서비스 상태 -->
+        <TextView
+            android:id="@+id/tvServiceStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="서비스 중지됨"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:textColor="@color/text_secondary"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 서비스 시작 버튼 -->
+        <Button
+            android:id="@+id/btnStartService"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="서비스 시작"
+            android:textSize="16sp"
+            android:layout_marginBottom="12dp"
+            style="@style/Widget.MaterialComponents.Button" />
+
+        <!-- 서비스 중지 버튼 -->
+        <Button
+            android:id="@+id/btnStopService"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="서비스 중지"
+            android:textSize="16sp"
+            android:enabled="false"
+            android:layout_marginBottom="12dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+        <!-- 접근성 설정 -->
+        <Button
+            android:id="@+id/btnAccessibilitySettings"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="접근성 서비스 설정"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton" />
+
+        <!-- 앱 설정 -->
+        <Button
+            android:id="@+id/btnSettings"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="앱 설정 (API 키 등)"
+            android:textSize="14sp"
+            style="@style/Widget.MaterialComponents.Button.TextButton" />
+
+        <!-- 사용 방법 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:layout_marginTop="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="음성 명령어"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• &quot;읽어줘&quot; — 현재 화면 OCR 후 읽기\n• &quot;멈춰&quot; — 읽기 중지\n• &quot;빠르게&quot; — 빠른 속도로 읽기\n• &quot;천천히&quot; — 느린 속도로 읽기\n• &quot;질문&quot; — AI에게 내용 질문\n• &quot;종료&quot; — 서비스 종료"
+                    android:textSize="13sp"
+                    android:lineSpacingMultiplier="1.5" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
