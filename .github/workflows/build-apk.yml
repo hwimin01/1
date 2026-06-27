@@ -23,13 +23,15 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: gradlew 줄바꿈 및 권한 수정
+      - name: Gradle 8.0 다운로드
         run: |
-          perl -pi -e 's/\r\n/\n/g; s/\r/\n/g' gradlew
-          chmod +x gradlew
+          curl -L -o /tmp/gradle.zip \
+            https://services.gradle.org/distributions/gradle-8.0-bin.zip
+          unzip -q /tmp/gradle.zip -d /opt/
+          echo "/opt/gradle-8.0/bin" >> $GITHUB_PATH
 
       - name: Debug APK 빌드
-        run: ./gradlew assembleDebug --no-daemon
+        run: gradle assembleDebug --no-daemon
 
       - name: APK 이름에 날짜 추가
         run: |
