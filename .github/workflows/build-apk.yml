@@ -23,7 +23,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Gradle 8.0 다운로드
+      - name: Gradle 8.0 설치
         run: |
           curl -L -o /tmp/gradle.zip \
             https://services.gradle.org/distributions/gradle-8.0-bin.zip
